@@ -11,9 +11,11 @@
 
   <body>
     <h1>Reddit on Rails!</h1>
+    <a href="<%= subs_url %>">Sub Directory</a>
+    <br> <br>
 
     <% if logged_in? %>
-      <h2>Welcome <%= current_user.username %></h2>
+      <a href="<%= user_url(current_user.id) %>">My Account</a>
 
       <form action="<%= session_url %>" method="POST">
         <%= auth_token %>

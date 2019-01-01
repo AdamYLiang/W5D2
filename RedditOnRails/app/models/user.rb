@@ -19,6 +19,11 @@ class User < ApplicationRecord
 
     #FGRIPE
 
+    has_many :subs,
+        class_name: :Sub,
+        primary_key: :id,
+        foreign_key: :mod_id
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         if user && user.is_password?(password)
