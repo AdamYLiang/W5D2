@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resource :session, only: [:new, :create, :destroy]
   resources :subs, except: [:destroy]
+
+  get 'posts/show/:id', :to => 'posts#show', as: 'post'
+  resource :posts, except: [:index, :show]
+
+  root to: redirect('/subs')
 end

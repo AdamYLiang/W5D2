@@ -2,4 +2,11 @@
 <h2><%= @sub.description %></h2>
 <h2>Created by <%= @sub.moderator.username %></h2>
 
+<a href="<%= new_posts_url %>">Make a post!</a>
 <a href="<%= edit_sub_url(@sub.id) %>">Edit Sub</a>
+
+<ul>
+<% @sub.posts.each do |post| %>
+    <li><a href="<%= post_url(post.id) %>"><%= post.title %></a></li>
+<% end %>
+</ul>
