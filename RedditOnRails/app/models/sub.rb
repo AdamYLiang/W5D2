@@ -9,11 +9,12 @@
 #
 
 class Sub < ApplicationRecord
+    validates_presence_of :title, :description, :mod_id
     
     belongs_to :moderator,
         class_name: :User,
         primary_key: :id,
         foreign_key: :mod_id
 
-        
+
 end

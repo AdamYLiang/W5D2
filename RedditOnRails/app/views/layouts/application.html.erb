@@ -22,6 +22,8 @@
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Logout">
       </form>
+    <% else %>
+      <a href="<%= new_session_url %>">Login</a>
     <% end %>
 
     <ul>
